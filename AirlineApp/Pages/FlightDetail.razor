@@ -1,0 +1,44 @@
+﻿
+@page "/FlightDetail/{FlightregistrationId}"
+
+
+<h1 class="page-title">Details for @Flightsmaster.FirstName @Flightsmaster.LastName</h1>
+
+
+<div class="col-12 row">
+    <div class="col-2">
+        <img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{Flightsmaster.FlightregistrationId}.jpg")" class="img-responsive rounded-circle employee-detail-img" />
+    </div>
+    <div class="col-10 row">
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Flightregistration ID</label>
+                <div class="col-sm-8">
+                    <label type="text" class="form-control-plaintext">@Flightsmaster.FlightregistrationId</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Flight name</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@Flightsmaster.Flightname</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Economy seats</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@Flightsmaster.Economyseats</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Business seats</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@Flightsmaster.Businessseats</label>
+                </div>
+            </div>
+
+           
+        </div>
+    </div>
+</div>

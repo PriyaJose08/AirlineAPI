@@ -1,0 +1,41 @@
+﻿
+@page "/employeeoverview"
+
+<h1 class="page-title">All employees</h1>
+
+@if (Flightsmasters == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Flight Registration ID</th>
+                <th>Flight name</th>
+                <th>Economy seats</th>
+                <th>Business seats</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Flightsmasters)
+            {
+                <tr>
+                    <td><img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{employee.FlightregistrationId}-small.jpg")" class="rounded-circle" /></td>
+                    <td>@employee.FlightregistrationId</td>
+                    <td>@employee.Flightname</td>
+                    <td>@employee.Economyseats</td>
+                    <td>@employee.Businessseats</td>
+                    <td>
+                        <a href="@($"employeedetail/{employee.FlightregistrationId}")" class="btn btn-primary table-btn">
+                            <i class="fas fa-info-circle"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
